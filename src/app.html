@@ -7,14 +7,7 @@
     </div>
 
     <div class="container">                
-        <div class="expressions">
-            <div repeat.for="expression of expressions">
-                <compose view=".\expression" view-model.bind="expression"></compose>
-            </div>
-
-            <button click.trigger="addExpression()">Add</button>
-        </div>
-
+        <compose view=".\expression" view-model.bind="expressionRoot"></compose>
         <button click.trigger="dumpExpressions()">Dump</button>
     </div>
 </template>

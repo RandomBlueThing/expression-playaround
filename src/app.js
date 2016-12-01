@@ -9,7 +9,12 @@ function replacer(key,value){
 export class App{
     constructor(){
         this.heading = "Expressions";
-        this.expressions = [];
+
+        this.expressionRoot = new Expression();
+        this.expressionRoot.property = "";
+        this.expressionRoot.operator = "MATCH ALL";
+        this.expressionRoot.value = "";
+        this.expressionRoot.parent = null;
     }
 
 
@@ -24,16 +29,6 @@ export class App{
 
             parent.children.push(x);
         }
-        else{
-            console.log("Creating root");
-            let x = new Expression();
-            x.property = "";
-            x.value = "";
-            x.operator = "AND";
-            x.parent = null;
-
-            this.expressions.push(x);            
-        }
     }
 
 
@@ -45,18 +40,12 @@ export class App{
                     expression.parent.children.splice(index, 1);
                 }
             }
-            else{
-                let index = this.expressions.indexOf(expression);
-                if(index !== -1){
-                    this.expressions.splice(index, 1);
-                }            
-            }
         }
     }
 
 
     dumpExpressions(){
-        console.log(JSON.stringify(this.expressions, replacer));
+        console.log(JSON.stringify(this.expressionRoot, replacer));
     }
 
 }

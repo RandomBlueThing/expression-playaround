@@ -11,11 +11,11 @@
                     </select>
                 </div>
                 <div class="col-md-3"><input type="text" value.bind="value"/></div>                    
-                <div class="col-md-3"><button click.trigger="deleteExpression($this)">x</button></div>                    
+                <div class="col-md-3"><button click.trigger="deleteExpression($this)" show.bind="parent">x</button></div>                    
             </div>
         </div>
 
-        <div show.bind="operator == 'AND' || operator == 'OR'" class="expressions">
+        <div show.bind="operator == 'MATCH ALL' || operator == 'MATCH ANY'" class="expressions">
             <div class="row">
                 <div class="col-md-9">
                     <select value.bind="operator">
@@ -24,7 +24,7 @@
                         </option>
                     </select>
                 </div>
-                <div class="col-md-3"><button click.trigger="deleteExpression($this)">x</button></div>                    
+                <div class="col-md-3"><button click.trigger="deleteExpression($this)" show.bind="parent">x</button></div>                    
             </div>
 
             <div repeat.for="child of children">

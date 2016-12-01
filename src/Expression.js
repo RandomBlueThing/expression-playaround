@@ -5,6 +5,6 @@ export class Expression{
         this.value = "";
         this.children = [];
         this.parent = null;
-        this.operators = ['=', '!=', 'CONTAINS', 'AND', 'OR'];
+        this.operators = ['=', '!=', 'CONTAINS', 'MATCH ALL', 'MATCH ANY'];
     }
 }
