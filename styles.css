@@ -13,5 +13,6 @@
     }
 
 .deleteExpression{
+    margin: auto;
     cursor: pointer;
 }
