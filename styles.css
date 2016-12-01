@@ -11,3 +11,7 @@
     background-color: lightyellow;
     padding: 5px;
     }
+
+.deleteExpression{
+    cursor: pointer;
+}

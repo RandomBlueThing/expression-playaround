@@ -2,9 +2,17 @@ import {Expression} from './expression';
 
 // Need something to stop JSON.stringify from processing parent
 function replacer(key,value){
-    if (key=="parent") return undefined;
-    else if (key=="operators") return undefined;
-    else return value;
+    var ignore = [
+        "parent", 
+        "operators", 
+        "isDeleteVisible"];
+        
+    if(ignore.indexOf(key) != -1){
+        return undefined;
+    }
+    else{
+        return value;
+    }
 }
 
 export class App{

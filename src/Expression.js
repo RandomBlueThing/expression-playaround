@@ -1,7 +1,7 @@
 export class Expression{
     constructor(){
         this.property = "";
-        this.operator = "=";
+        this.operator = "AND";
         this.value = "";
         this.children = [];
         this.parent = null;
@@ -12,5 +12,14 @@ export class Expression{
             { key: 'AND', display: 'Match All' },
             { key: 'OR', display: 'Match Any' }
         ];
+        this.isDeleteVisible = true;        
+    }
+
+    mouseOver(){
+        this.isDeleteVisible = true;
+    }
+
+    mouseOut(){
+        this.isDeleteVisible = false;
     }
 }

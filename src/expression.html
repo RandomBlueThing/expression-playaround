@@ -1,7 +1,7 @@
 <template>
     <div>
         <div show.bind="operator == '=' || operator == '!=' || operator == 'CONTAINS'" class="expression">
-            <div class="row">
+            <div class="row" mouseover.delegate="mouseOver()" mouseout.delegate="mouseOut()">
                 <div class="col-md-3"><input type="text" value.bind="property"/></div>                        
                 <div class="col-md-3">
                     <select value.bind="operator">
@@ -11,20 +11,20 @@
                     </select>
                 </div>
                 <div class="col-md-3"><input type="text" value.bind="value"/></div>                    
-                <div class="col-md-3"><button click.trigger="deleteExpression($this)" show.bind="parent">x</button></div>                    
+                <div class="col-md-3"><i class="fa fa-minus-circle deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
             </div>
         </div>
 
         <div show.bind="operator == 'AND' || operator == 'OR'" class="expressions">
-            <div class="row">
-                <div class="col-md-9">
+            <div class="row" mouseover.delegate="mouseOver()" mouseout.delegate="mouseOut()">
+                <div class="col-md-11">
                     <select value.bind="operator">
                         <option repeat.for="op of operators" model.bind="op.key">
                             ${op.display}
                         </option>
                     </select>
                 </div>
-                <div class="col-md-3"><button click.trigger="deleteExpression($this)" show.bind="parent">x</button></div>                    
+                <div class="col-md-1"><i class="fa fa-minus-circle deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
             </div>
 
             <div repeat.for="child of children">
