@@ -1,5 +1,6 @@
 import {Expression} from './expression';
 
+// Need something to stop JSON.stringify from processing parent
 function replacer(key,value){
     if (key=="parent") return undefined;
     else if (key=="operators") return undefined;
@@ -12,7 +13,7 @@ export class App{
 
         this.expressionRoot = new Expression();
         this.expressionRoot.property = "";
-        this.expressionRoot.operator = "MATCH ALL";
+        this.expressionRoot.operator = "AND";
         this.expressionRoot.value = "";
         this.expressionRoot.parent = null;
     }
