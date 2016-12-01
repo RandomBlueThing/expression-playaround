@@ -20,15 +20,14 @@ export class App{
 
 
     addExpression(parent){
-        if(parent){
-            console.log("Creating child");
-            let x = new Expression();
-            x.property = "Child";
-            x.operator = "=";
-            x.value = "Test-01";
-            x.parent = parent;
+        if(parent){            
+            let expression = new Expression();
+            expression.property = "Child";
+            expression.operator = "=";
+            expression.value = "Test-01";
+            expression.parent = parent;
 
-            parent.children.push(x);
+            parent.children.push(expression);
         }
     }
 
@@ -48,5 +47,4 @@ export class App{
     dumpExpressions(){
         console.log(JSON.stringify(this.expressionRoot, replacer));
     }
-
 }
