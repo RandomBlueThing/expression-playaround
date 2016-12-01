@@ -1,0 +1,14 @@
+.expressions {    
+    background-color: lightsteelblue;
+    margin: 5px;
+    padding: 5px;
+    }
+
+.expression {    
+    background-color: lightyellow;
+    margin: 5px;
+    padding: 5px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    }
