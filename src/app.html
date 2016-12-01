@@ -1,8 +1,12 @@
 <template>
-    <h1>${heading}</h1>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>${heading}</h1>
+            <p>General playaround for an expression tree.</p>
+        </div>
+    </div>
 
-    <div class="container">
-                
+    <div class="container">                
         <div class="expressions">
             <div repeat.for="expression of expressions">
                 <compose view=".\expression.html" view-model.bind="expression"></compose>
@@ -12,6 +16,5 @@
         </div>
 
         <button click.trigger="dumpExpressions()">Dump</button>
-
     </div>
 </template>
