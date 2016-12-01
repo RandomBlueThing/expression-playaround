@@ -1,5 +1,11 @@
 import {Expression} from './expression';
 
+function replacer(key,value){
+    if (key=="parent") return undefined;
+    else if (key=="operators") return undefined;
+    else return value;
+}
+
 export class App{
     constructor(){
         this.heading = "Expressions";
@@ -50,6 +56,7 @@ export class App{
 
 
     dumpExpressions(){
-        console.log(JSON.stringify(this.expressions));
+        console.log(JSON.stringify(this.expressions, replacer));
     }
+
 }

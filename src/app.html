@@ -9,7 +9,7 @@
     <div class="container">                
         <div class="expressions">
             <div repeat.for="expression of expressions">
-                <compose view=".\expression.html" view-model.bind="expression"></compose>
+                <compose view=".\expression" view-model.bind="expression"></compose>
             </div>
 
             <button click.trigger="addExpression()">Add</button>
