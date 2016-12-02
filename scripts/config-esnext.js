@@ -1,12 +1,5 @@
 System.config({
   transpiler: "plugin-babel",
-  babelOptions: {
-    "optional": [
-      "es7.decorators",
-      "es7.classProperties",
-      "runtime"
-    ]
-  },
   devConfig: {
     "map": {
       "plugin-babel": "babel:systemjs-plugin-babel@0.0.12"
