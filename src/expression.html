@@ -11,7 +11,7 @@
                     </select>
                 </div>
                 <div class="col-md-3"><input type="text" value.bind="value"/></div>                    
-                <div class="col-md-3"><i class="fa fa-minus-circle deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
+                <div class="col-md-3"><i class="fa fa-trash-o deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                         </option>
                     </select>
                 </div>
-                <div class="col-md-1"><i class="fa fa-minus-circle deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
+                <div class="col-md-1"><i class="fa fa-trash-o deleteExpression" aria-hidden="true" click.trigger="deleteExpression($this)" show.bind="parent && isDeleteVisible"></i></div>                    
             </div>
 
             <div repeat.for="child of children">

@@ -1,10 +1,11 @@
+import {inject} from 'aurelia-framework';
 import {Expression} from './expression';
+import {ExpressionRepository} from './ExpressionRepository';
 
 // Need something to stop JSON.stringify from processing parent
 function replacer(key,value){
     var ignore = [
         "parent", 
-        "operators", 
         "isDeleteVisible"];
         
     if(ignore.indexOf(key) != -1){
@@ -15,15 +16,26 @@ function replacer(key,value){
     }
 }
 
+//@inject(ExpressionRepository)
 export class App{
     constructor(){
         this.heading = "Expressions";
+
+        //this.expressionRepository = expressionRepository;
 
         this.expressionRoot = new Expression();
         this.expressionRoot.property = "";
         this.expressionRoot.operator = "AND";
         this.expressionRoot.value = "";
         this.expressionRoot.parent = null;
+
+        this.operators = [
+            { key: '=', display: '=' },
+            { key: '!=', display: '!=' },
+            { key: 'CONTAINS', display: 'Contains' },
+            { key: 'AND', display: 'Match All' },
+            { key: 'OR', display: 'Match Any' }
+        ];
     }
 
 

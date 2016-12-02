@@ -4,14 +4,9 @@ export class Expression{
         this.operator = "AND";
         this.value = "";
         this.children = [];
+
+        // So, parent isn't going to be part of the model...
         this.parent = null;
-        this.operators = [
-            { key: '=', display: '=' },
-            { key: '!=', display: '!=' },
-            { key: 'CONTAINS', display: 'Contains' },
-            { key: 'AND', display: 'Match All' },
-            { key: 'OR', display: 'Match Any' }
-        ];
         this.isDeleteVisible = true;        
     }
 

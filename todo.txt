@@ -1,0 +1,2 @@
+- Our expression class doesn't look like what we're going to get from the 
+  service (ie, stuff like the operators list and parent won't be there)
